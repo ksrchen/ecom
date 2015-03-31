@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/bundles/styles")
+</head>
+<body>   
+    <div class="container body-content">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand" href="/">Loopnet Store</a>
+                </div>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
+                </form>
+                @*<a href="#" class="navbar-text navbar-right navbar-link">Cart [1]</a>*@
+                <span class="navbar-text navbar-right" >
+                    @Html.ActionLink("Cart", "index", "Cart", null, new { @class = "navbar-link" })
+                    <span class="badge">2</span>
+                </span>
+                <p class="navbar-text navbar-right">Hello @Html.ActionLink("Matt Long", "index", "MyAccount", null, new { @class = "navbar-link" })</p>
+                </div>
+            </nav> 
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
