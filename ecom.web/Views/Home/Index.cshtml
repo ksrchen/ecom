@@ -1,5 +1,16 @@
-﻿@{
-    ViewBag.Title = "Home";
-}
-
-
+﻿@model dynamic
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        @foreach (var p in Model)
+        {
+            <img src="..." alt="...">
+            <div class="caption">
+                <h5>@p.Name</h5>
+                <h5>@string.Format("{0:c}", p.Price)</h5>
+                @*<p><a href="#" class="btn btn-primary" role="button">Add to cart</a></p>*@
+                @Html.ActionLink("Add to cart", "Add2Cart", "Home", new { @id = p.ProductID }, new  { @class = "btn btn-primary", @role="button" })
+            </div>
+            <hr>
+        }
+        </div>
+    </div>

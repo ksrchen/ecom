@@ -2,6 +2,22 @@
     ViewBag.Title = "index";
 }
 
+@model dynamic
 <h2>Shopping Cart</h2>
 
-<button class="btn btn-default" onclick="@("location.href='/Checkout'")" >Proceed to Checkout</button>
+@foreach (var p in Model)
+{
+    <div class="row">
+        <div class="col-md-8">@p.Product.Name @Html.ActionLink("Remove", "Remove", "Home", new { @id = p.Product.ProductID }, new { @style="font-size:0.8em" })</div>
+        <div class="col-sm-2 form-inline">Quantity&nbsp;<input type="number" class="form-control" id="qty" maxlength="2" style="width:40px" value="1" /></div>
+        <div class="col-md-1">Price</div>
+        <div class="col-md-1">@string.Format("{0:c}", p.Product.Price)</div>
+    </div>
+}
+<hr>
+<div class="row">
+    <div class="col-md-10"></div>
+    <div class="col-md-1">Subtotal</div>
+    <div class="col-md-1">@string.Format("{0:c}", ViewBag.Subtotal)</div>
+</div>
+<a class="btn btn-default" role="button" onclick="@("location.href='/Checkout'")">Proceed to Checkout</a>

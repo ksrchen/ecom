@@ -7,6 +7,11 @@
     <title>@ViewBag.Title</title>
 
     @Styles.Render("~/bundles/styles")
+
+    @using (var db = new ecom.web.Models.ecomEntities())
+    {
+        ViewBag.ItemCount = db.ShoppingCarts.Count();
+    }
 </head>
 <body>   
     <div class="container body-content">
@@ -26,7 +31,7 @@
                 @*<a href="#" class="navbar-text navbar-right navbar-link">Cart [1]</a>*@
                 <span class="navbar-text navbar-right" >
                     @Html.ActionLink("Cart", "index", "Cart", null, new { @class = "navbar-link" })
-                    <span class="badge">2</span>
+                    <span class="badge">@ViewBag.ItemCount.ToString()</span>
                 </span>
                 <p class="navbar-text navbar-right">Hello @Html.ActionLink("Matt Long", "index", "MyAccount", null, new { @class = "navbar-link" })</p>
                 </div>

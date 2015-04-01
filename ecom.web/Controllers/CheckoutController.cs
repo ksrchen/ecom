@@ -12,6 +12,7 @@ namespace ecom.web.Controllers
         public ActionResult Index()
         {
             return View();
+            
         }
 
         public ActionResult PlaceOrder()
