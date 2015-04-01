@@ -3,8 +3,9 @@
 }
 
 <h2>Review your order</h2>
-<div><label id="message"></label></div>
-<form id="contact_form">
+<div><label id="message" class="validation-summary-errors"></label></div>
+@Html.ValidationSummary(true)
+<form id="contact_form" action ="/Checkout/PlaceOrder" method="post">
     <div class="div-table">
         <div class="div-row">
             <div class="div-cell">
@@ -19,6 +20,12 @@
                 <label class="fieldName">State:</label><input type="text" name="state" /><br />
                 <label class="fieldName">Country:</label><input type="text" name="country" /><br />
                 <label class="fieldName">Postal Code:</label><input type="text" name="postalCode" /><br />
+                <input type="hidden" name="shoppingCardId" id="shoppingCardId" />
+                <input type="hidden" name="creditCardToken" id="creditCardToken" />
+                <input type="hidden" name="creditCardType" id="creditCardType" />
+                <input type="hidden" name="creditCardExpirationMonth" id="creditCardExpirationMonth" />
+                <input type="hidden" name="creditCardExpirationYear" id="creditCardExpirationYear" />
+                <input type="hidden" name="creditCardNumber" id="creditCardNumber" />
             </div>
             <div class="div-cell" style="width:380px">
                 <h1 class="section-title">Credit Card Information</h1>

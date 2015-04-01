@@ -27,12 +27,22 @@
             }).then( function (event) {
                 $("#completePurchase").prop('disabled', false);
                 if (event.response.Status) {
-                    var msg = $("#message");
-                    msg.empty();
-                    msg.removeClass("message-error");
-                    msg.addClass("message-success");
-                    msg.append("Your payment has been accepted<br/>");
-                    msg.append('Token:' + event.response.Token + '<br/>');
+                    //var msg = $("#message");
+                    //msg.empty();
+                    //msg.removeClass("message-error");
+                    //msg.addClass("message-success");
+                    //msg.append("Your payment has been accepted<br/>");
+                    //msg.append('Token:' + event.response.Token + '<br/>');
+
+                    $("#shoppingCardId").val("1");
+                    $("#creditCardToken").val(event.response.Token);
+                    $("#creditCardNumber").val(event.response.CreditCard.CardNumber);
+                    $("#creditCardExpirationMonth").val(event.response.CreditCard.ExpirationMonth);
+                    $("#creditCardExpirationYear").val(event.response.CreditCard.ExpirationYear);
+                    $("#creditCardType").val(event.response.CreditCard.CardType);
+
+                    $("#contact_form").submit();
+
                 }
                 else {
                     var msg = $("#message");

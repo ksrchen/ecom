@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ecom.web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 
 namespace ecom.web.Controllers
@@ -16,13 +18,15 @@ namespace ecom.web.Controllers
                 var query = from item in db.ShoppingCarts.Include("Product") select item;
                 ViewBag.OrderTotal = query.Sum(p => p.Product.Price);
             }
-            return View();
+            return View("Index");
             
         }
 
-        public ActionResult PlaceOrder()
+        public ActionResult PlaceOrder([FromBody] CheckoutRequest req )
         {
-            return View();
+            ModelState.AddModelError("", "Authorization failed");
+
+            return Index();
         }
     }
 }

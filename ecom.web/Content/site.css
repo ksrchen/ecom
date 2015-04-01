@@ -111,6 +111,21 @@ input.mpps-input-card-cvn {
     width: 160px !important;
     vertical-align: top;
 }
+.validation-summary-errors {
+    background-color: #D9FFB2;
+    width: 400px;
+    }
+span.validation-summary-errors {
+    border-bottom-color: #D9FFB2;
+    display:block;
+    }
+.validation-summary-errors > ul {
+    margin:0;
+    padding:0;
+    border-top:none;
+    list-style-type: none;
+     color: #e80c4d;
+    }
 .section-title
 {
     font-size:1.2em;

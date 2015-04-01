@@ -151,6 +151,7 @@
     <Compile Include="Models\Benefit.cs">
       <DependentUpon>eComDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CheckoutRequest.cs" />
     <Compile Include="Models\eComDatabase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
