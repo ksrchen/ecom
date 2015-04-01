@@ -22,3 +22,98 @@ select,
 textarea {
     /*max-width: 280px;*/
 }
+
+
+.div-table
+{
+    display:table;
+}
+.div-row
+{
+    display:table-row;
+}
+.div-cell
+{
+    display: table-cell;
+    padding-left:15px;
+}
+.mpps-label {
+	 float: left;
+    width: 158px;
+    text-align: left;
+    padding-right: 10px;
+    font-size: 12px;
+    display: block;
+}
+
+.mpps-card-expiry-divider {
+    display: inline-block;
+    margin: 0 3px;
+    font-size: 15px;
+}
+.mpps-card-image-group {
+    padding-left: 0px;
+    margin-bottom: 4px;
+}
+.mpps-input-group {
+    margin-bottom: 4px;
+}
+.mpps-input-field {
+    width:360px;
+}
+.mpps-select {
+    font-size: 12px;
+}
+.mpps-cvn-group {
+    width: 171px;
+    float: left;
+
+}
+p.mpps-cvn-helper-text {
+    font-size: 10px;
+    color: #999;
+}
+.mpps-image-cvn {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 6px;
+}
+input.mpps-input-card-cvn {
+    width: 45px;
+}
+.mpps-input-card-cvn {
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: -3px;
+}
+.message
+{
+    display:block;
+    width:800px;
+    text-align:center;
+}
+.message-error {
+    clear: both;
+    color: #e80c4d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success {
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+.fieldName {
+    display:inline-block;
+    width: 160px !important;
+    vertical-align: top;
+}
+.section-title
+{
+    font-size:1.2em;
+    font-weight:bold;
+    /*background-color:lightgray;*/
+}

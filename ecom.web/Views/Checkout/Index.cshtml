@@ -1,8 +1,43 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
 <h2>Review your order</h2>
+<div><label id="message"></label></div>
+<form id="contact_form">
+    <div class="div-table">
+        <div class="div-row">
+            <div class="div-cell">
+                <h1 class="section-title">Billing address</h1>
+                <label class="fieldName">First Name:</label><input type="text" name="firstName" /><br />
+                <label class="fieldName">Last Name:</label><input type="text" name="lastName" /><br />
+                <label class="fieldName">Email:</label><input type="text" name="email" /><br />
+                <label class="fieldName">Phone:</label><input type="text" name="phone" /><br />
+                <label class="fieldName">Address Line1:</label><input type="text" name="addressLine1" /><br />
+                <label class="fieldName">Address Line2:</label><input type="text" name="addressLine2" /><br />
+                <label class="fieldName">City:</label><input type="text" name="city" /><br />
+                <label class="fieldName">State:</label><input type="text" name="state" /><br />
+                <label class="fieldName">Country:</label><input type="text" name="country" /><br />
+                <label class="fieldName">Postal Code:</label><input type="text" name="postalCode" /><br />
+            </div>
+            <div class="div-cell" style="width:380px">
+                <h1 class="section-title">Credit Card Information</h1>
+                <div id="mpps-payment"></div>
+            </div>
 
-<button class="btn btn-default" onclick="@("location.href='/Checkout/placeorder'")">Place your order</button>
+            <div class="div-cell"></div>
+            <div class="div-cell">
+                <h1 class="section-title">
+                    Order Summary
+                    <button class="btn btn-primary" id="completePurchase">Place your order</button>
+                </h1>
+                <div><label class="fieldName">Items:</label>@string.Format("{0:c}", ViewBag.OrderTotal)</div>
+                <div><label class="fieldName">Tax:</label>$0.00</div>
+                <div><label class="fieldName">Order total:</label>@string.Format("{0:c}", ViewBag.OrderTotal)</div>
+            </div>
+        </div>
+    </div>
+</form> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://devvmkchen02.us.costar.local/api/v1"></script> 
+<script src="~/Scripts/checkout.js"></script>

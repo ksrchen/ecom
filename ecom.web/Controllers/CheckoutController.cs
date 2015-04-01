@@ -11,6 +11,11 @@ namespace ecom.web.Controllers
         // GET: Checkout
         public ActionResult Index()
         {
+            using (var db = new ecom.web.Models.ecomEntities())
+            {
+                var query = from item in db.ShoppingCarts.Include("Product") select item;
+                ViewBag.OrderTotal = query.Sum(p => p.Product.Price);
+            }
             return View();
             
         }

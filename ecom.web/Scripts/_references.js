@@ -5,3 +5,4 @@
 /// <reference path="jquery.validate.js" />
 /// <reference path="jquery.validate.unobtrusive.min.js" />
 /// <reference path="jquery-ui.min-1.11.1.js" />
+/// <reference path="checkout.js" />

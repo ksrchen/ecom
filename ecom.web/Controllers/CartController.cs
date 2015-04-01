@@ -18,5 +18,19 @@ namespace ecom.web.Controllers
                 return View("index", query.ToList());
             }
         }
+
+        public ActionResult Remove(int id)
+        {
+            using (var db = new ecom.web.Models.ecomEntities())
+            {
+                var item = db.ShoppingCarts.FirstOrDefault(p => p.ShoppingCartID == id);
+                if (item !=null)
+                {
+                    db.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+                    db.SaveChanges();
+                }
+                return Index();
+            }
+        }
     }
 }
