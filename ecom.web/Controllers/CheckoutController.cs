@@ -28,6 +28,7 @@ namespace ecom.web.Controllers
             try
             {
                 BusConfiguration configuration = new BusConfiguration();
+                configuration.UsePersistence<InMemoryPersistence>();
                 ISendOnlyBus bus = Bus.CreateSendOnly(configuration);
                 bus.Send("Ecom.Server", new Ecom.messages.CreateOrder() {Order = Convert(req)});
                 clearCart();

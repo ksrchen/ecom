@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Ecom.messages
 {
-    public class CreateShoppingCart : ICommand
+    public class RecievedPayment : IMessage 
     {
-        public ShoppingCart cart { get; set; }
+        public int OrderID { get; set; }
+        public string TransactionID { get; set; }
     }
 }

@@ -10,7 +10,8 @@
 <div class="tab-content">
     <div class="tab-pane active" id="order">
         <div class="row">
-            <div class="col-md-4">Order Date</div>
+            <div class="col-md-1">Order ID</div>
+            <div class="col-md-3">Order Date</div>
             <div class="col-md-1">Price</div>
             <div class="col-md-2">Status</div>
         </div>
@@ -20,7 +21,8 @@
             foreach (var i in query)
             {
                  <div class="row">
-                     <div class="col-md-4">@i.OrderDate.ToLocalTime().ToString("M/d/yyyy hh:mm:ss tt")</div>
+                     <div class="col-md-1">@i.OrderID</div>
+                     <div class="col-md-3">@i.OrderDate.ToLocalTime().ToString("M/d/yyyy hh:mm:ss tt")</div>
                      <div class="col-md-1">@string.Format("{0:c}", i.TotalPrice)</div>
                      <div class="col-md-2">@i.OrderStatu.Name</div>
                  </div>

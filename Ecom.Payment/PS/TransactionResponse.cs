@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecom.messages
+namespace PS.models
 {
-    public class ShoppingCart
+    public class TransactionResponse : ResponseBase
     {
+        public string TransactionId { get; set; }
     }
 }

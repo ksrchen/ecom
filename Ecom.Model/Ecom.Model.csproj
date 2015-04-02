@@ -74,6 +74,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EcomDatabase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ObjectExtension.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>EcomDatabase.tt</DependentUpon>
     </Compile>
