@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.client", "Ecom.client\Ecom.client.csproj", "{DA0FF917-5147-4842-9AB6-A3F9DE1F1CF8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.server", "Ecom.server\Ecom.server.csproj", "{73DB10BD-C920-403E-97F9-B00CB86DC4C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.messages", "Ecom.messages\Ecom.messages.csproj", "{4CCCB46C-32F8-4C69-8A30-315CA4827B84}"
@@ -13,16 +11,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom.web", "ecom.web\ecom.w
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.Model", "Ecom.Model\Ecom.Model.csproj", "{7B80C7D3-8D91-4142-AA67-9E8296D218AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.Payment", "Ecom.Payment\Ecom.Payment.csproj", "{A1F0A0B4-99BD-4039-986D-19E5E1E0AF23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.Billing", "Ecom.Billing\Ecom.Billing.csproj", "{1021B82A-8B1F-4962-8BFF-18C0B1D226A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.Fulfillment", "Ecom.Fulfillment\Ecom.Fulfillment.csproj", "{978A1DBD-6001-44A4-8847-4BC7EDD7569A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DA0FF917-5147-4842-9AB6-A3F9DE1F1CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA0FF917-5147-4842-9AB6-A3F9DE1F1CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA0FF917-5147-4842-9AB6-A3F9DE1F1CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA0FF917-5147-4842-9AB6-A3F9DE1F1CF8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73DB10BD-C920-403E-97F9-B00CB86DC4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{73DB10BD-C920-403E-97F9-B00CB86DC4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73DB10BD-C920-403E-97F9-B00CB86DC4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +39,18 @@ Global
 		{7B80C7D3-8D91-4142-AA67-9E8296D218AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B80C7D3-8D91-4142-AA67-9E8296D218AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B80C7D3-8D91-4142-AA67-9E8296D218AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1F0A0B4-99BD-4039-986D-19E5E1E0AF23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1F0A0B4-99BD-4039-986D-19E5E1E0AF23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1F0A0B4-99BD-4039-986D-19E5E1E0AF23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1F0A0B4-99BD-4039-986D-19E5E1E0AF23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1021B82A-8B1F-4962-8BFF-18C0B1D226A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1021B82A-8B1F-4962-8BFF-18C0B1D226A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1021B82A-8B1F-4962-8BFF-18C0B1D226A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1021B82A-8B1F-4962-8BFF-18C0B1D226A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{978A1DBD-6001-44A4-8847-4BC7EDD7569A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{978A1DBD-6001-44A4-8847-4BC7EDD7569A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{978A1DBD-6001-44A4-8847-4BC7EDD7569A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{978A1DBD-6001-44A4-8847-4BC7EDD7569A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
