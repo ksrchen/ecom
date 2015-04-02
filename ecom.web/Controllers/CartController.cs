@@ -11,7 +11,7 @@ namespace ecom.web.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            using (var db = new ecom.web.Models.ecomEntities())
+            using (var db = new Ecom.Model.ecomEntities())
             {
                 var query = from item in db.ShoppingCarts.Include("Product") select item;
                 ViewBag.Subtotal = query.Sum(p => p.Product.Price);
@@ -21,7 +21,7 @@ namespace ecom.web.Controllers
 
         public ActionResult Remove(int id)
         {
-            using (var db = new ecom.web.Models.ecomEntities())
+            using (var db = new Ecom.Model.ecomEntities())
             {
                 var item = db.ShoppingCarts.FirstOrDefault(p => p.ShoppingCartID == id);
                 if (item !=null)

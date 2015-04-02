@@ -8,7 +8,7 @@
 
     @Styles.Render("~/bundles/styles")
 
-    @using (var db = new ecom.web.Models.ecomEntities())
+    @using (var db = new Ecom.Model.ecomEntities())
     {
         ViewBag.ItemCount = db.ShoppingCarts.Count();
     }

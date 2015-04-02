@@ -6,7 +6,7 @@ namespace ecom.web.Controllers
     {
         public ActionResult Index()
         {
-            using (var db = new ecom.web.Models.ecomEntities())
+            using (var db = new Ecom.Model.ecomEntities())
             {               
                 var query = from item in db.Products select item;
                 return View("index", query.ToList());
@@ -16,9 +16,9 @@ namespace ecom.web.Controllers
 
         public ActionResult Add2Cart(int id)
         {
-            using (var db = new ecom.web.Models.ecomEntities())
+            using (var db = new Ecom.Model.ecomEntities())
             {
-                db.ShoppingCarts.Add(new Models.ShoppingCart
+                db.ShoppingCarts.Add(new Ecom.Model.ShoppingCart
                 {
                     ProductID = id,
                     UserID = 1,

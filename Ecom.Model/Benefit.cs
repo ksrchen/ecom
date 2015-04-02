@@ -7,28 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ecom.web.Models
+namespace Ecom.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Benefit
     {
-        public Product()
+        public Benefit()
         {
-            this.OrderLines = new HashSet<OrderLine>();
             this.ProductBenefits = new HashSet<ProductBenefit>();
-            this.ShoppingCarts = new HashSet<ShoppingCart>();
+            this.UserBenefits = new HashSet<UserBenefit>();
         }
     
-        public int ProductID { get; set; }
-        public string GLCode { get; set; }
+        public int BenefitID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public decimal Price { get; set; }
     
-        public virtual ICollection<OrderLine> OrderLines { get; set; }
         public virtual ICollection<ProductBenefit> ProductBenefits { get; set; }
-        public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; }
+        public virtual ICollection<UserBenefit> UserBenefits { get; set; }
     }
 }

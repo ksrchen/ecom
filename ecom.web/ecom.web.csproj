@@ -60,6 +60,9 @@
     <Reference Include="Ninject.Web.Mvc">
       <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="NServiceBus.Core">
+      <HintPath>..\packages\NServiceBus.5.2.0\lib\net45\NServiceBus.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -148,49 +151,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DependencyResolvers\NinjectDependencyResolver.cs" />
-    <Compile Include="Models\Benefit.cs">
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\CheckoutRequest.cs" />
-    <Compile Include="Models\eComDatabase.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>eComDatabase.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\eComDatabase.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\eComDatabase.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>eComDatabase.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Order.cs">
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OrderLine.cs">
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OrderStatu.cs">
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductBenefit.cs">
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ShoppingCart.cs">
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.cs">
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserBenefit.cs">
-      <DependentUpon>eComDatabase.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -266,23 +227,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <EntityDeploy Include="Models\eComDatabase.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>eComDatabase.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\eComDatabase.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>eComDatabase.edmx</DependentUpon>
-      <LastGenOutput>eComDatabase.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\eComDatabase.edmx.diagram">
-      <DependentUpon>eComDatabase.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\eComDatabase.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>eComDatabase.edmx</DependentUpon>
-      <LastGenOutput>eComDatabase.cs</LastGenOutput>
-    </Content>
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -324,6 +268,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ecom.messages\Ecom.messages.csproj">
+      <Project>{4cccb46c-32f8-4c69-8a30-315ca4827b84}</Project>
+      <Name>Ecom.messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ecom.Model\Ecom.Model.csproj">
+      <Project>{7b80c7d3-8d91-4142-aa67-9e8296d218ad}</Project>
+      <Name>Ecom.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

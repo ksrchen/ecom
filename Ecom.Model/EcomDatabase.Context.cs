@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ecom.web.Models
+namespace Ecom.Model
 {
     using System;
     using System.Data.Entity;
@@ -34,5 +34,7 @@ namespace ecom.web.Models
         public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserBenefit> UserBenefits { get; set; }
+        public virtual DbSet<Contact> Contacts { get; set; }
+        public virtual DbSet<CreditCard> CreditCards { get; set; }
     }
 }

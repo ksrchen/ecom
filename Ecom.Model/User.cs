@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ecom.web.Models
+namespace Ecom.Model
 {
     using System;
     using System.Collections.Generic;
@@ -19,6 +19,7 @@ namespace ecom.web.Models
             this.Orders = new HashSet<Order>();
             this.ShoppingCarts = new HashSet<ShoppingCart>();
             this.UserBenefits = new HashSet<UserBenefit>();
+            this.CreditCards = new HashSet<CreditCard>();
         }
     
         public int UserID { get; set; }
@@ -30,5 +31,6 @@ namespace ecom.web.Models
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; }
         public virtual ICollection<UserBenefit> UserBenefits { get; set; }
+        public virtual ICollection<CreditCard> CreditCards { get; set; }
     }
 }

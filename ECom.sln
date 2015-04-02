@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.messages", "Ecom.messa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ecom.web", "ecom.web\ecom.web.csproj", "{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecom.Model", "Ecom.Model\Ecom.Model.csproj", "{7B80C7D3-8D91-4142-AA67-9E8296D218AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B80C7D3-8D91-4142-AA67-9E8296D218AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B80C7D3-8D91-4142-AA67-9E8296D218AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B80C7D3-8D91-4142-AA67-9E8296D218AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B80C7D3-8D91-4142-AA67-9E8296D218AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

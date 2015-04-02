@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ecom.web.Models
+namespace Ecom.Model
 {
     using System;
     using System.Collections.Generic;
@@ -24,9 +24,11 @@ namespace ecom.web.Models
         public System.DateTimeOffset OrderDate { get; set; }
         public decimal TotalPrice { get; set; }
         public int OrderStatusID { get; set; }
+        public Nullable<int> CreditCardID { get; set; }
     
         public virtual OrderStatu OrderStatu { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<OrderLine> OrderLines { get; set; }
+        public virtual CreditCard CreditCard { get; set; }
     }
 }

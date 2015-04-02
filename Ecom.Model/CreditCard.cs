@@ -7,22 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ecom.web.Models
+namespace Ecom.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderStatu
+    public partial class CreditCard
     {
-        public OrderStatu()
+        public CreditCard()
         {
             this.Orders = new HashSet<Order>();
         }
     
-        public int OrderStatusID { get; set; }
-        public string Name { get; set; }
+        public int CreditCardID { get; set; }
+        public int UserID { get; set; }
+        public int BillingContactID { get; set; }
+        public string Token { get; set; }
+        public string Type { get; set; }
+        public int ExpirationMonth { get; set; }
+        public int ExiprationYear { get; set; }
+        public string Last4Digits { get; set; }
         public bool Active { get; set; }
     
+        public virtual Contact Contact { get; set; }
+        public virtual User User { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

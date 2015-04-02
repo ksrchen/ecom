@@ -7,19 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ecom.web.Models
+namespace Ecom.Model
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class UserBenefit
+    public enum OrderStatusType : int
     {
-        public int UserBenefitID { get; set; }
-        public int UserID { get; set; }
-        public int BenefitID { get; set; }
-        public Nullable<int> FromOrderLineID { get; set; }
-    
-        public virtual Benefit Benefit { get; set; }
-        public virtual User User { get; set; }
+        pending_payment = 1,
+        payment_recieved = 2,
+        pending_fulfillment = 3,
+        cancelled = 4,
+        completed = 5
     }
 }

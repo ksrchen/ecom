@@ -7,18 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ecom.web.Models
+namespace Ecom.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductBenefit
+    public partial class OrderStatu
     {
-        public int ProductBenefitID { get; set; }
-        public int ProductID { get; set; }
-        public int BenefitID { get; set; }
+        public OrderStatu()
+        {
+            this.Orders = new HashSet<Order>();
+        }
     
-        public virtual Benefit Benefit { get; set; }
-        public virtual Product Product { get; set; }
+        public int OrderStatusID { get; set; }
+        public string Name { get; set; }
+        public bool Active { get; set; }
+    
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
