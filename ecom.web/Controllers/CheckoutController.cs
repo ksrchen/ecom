@@ -17,7 +17,7 @@ namespace ecom.web.Controllers
             using (var db = new Ecom.Model.ecomEntities())
             {
                 var query = from item in db.ShoppingCarts.Include("Product") select item;
-                ViewBag.OrderTotal = query.Sum(p => p.Product.Price);
+                ViewBag.OrderTotal = query.Count()>0 ? query.Sum(p => p.Product.Price) : 0;
             }
             return View("Index");
             
@@ -30,6 +30,7 @@ namespace ecom.web.Controllers
                 BusConfiguration configuration = new BusConfiguration();
                 ISendOnlyBus bus = Bus.CreateSendOnly(configuration);
                 bus.Send("Ecom.Server", new Ecom.messages.CreateOrder() {Order = Convert(req)});
+                clearCart();
                 return View();
             }
             catch (Exception exp)
@@ -38,8 +39,19 @@ namespace ecom.web.Controllers
                 return Index();
             }
         }
+        private void clearCart()
+        {
+            using (var db = new Ecom.Model.ecomEntities())
+            {
+                foreach (var i in db.ShoppingCarts)
+                {
+                    db.Entry(i).State = System.Data.Entity.EntityState.Deleted;
+                }
+                db.SaveChanges();
+            }
+        }
 
-        Ecom.Model.Order Convert(CheckoutRequest req)
+        private Ecom.Model.Order Convert(CheckoutRequest req)
         {
             using (var db = new Ecom.Model.ecomEntities())
             {

@@ -1,12 +1,37 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "index";
 }
 
 <h2>My Account</h2>
-<ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="#">Benefits</a></li>
-    <li role="presentation"><a href="#">Order History</a></li>
-    <li role="presentation"><a href="#">Contact Info</a></li>
+<ul class="nav nav-tabs" data-tabs="tabs">
+    <li class="active"><a data-toggle="tab" href="#order">Order History</a></li>
+    <li><a data-toggle="tab" href="#benefit">Benefit</a></li>    
 </ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="order">
+        <div class="row">
+            <div class="col-md-4">Order Date</div>
+            <div class="col-md-1">Price</div>
+            <div class="col-md-2">Status</div>
+        </div>
+        @using (var db = new Ecom.Model.ecomEntities())
+        {
+            var query = from o in db.Orders where o.UserID == 1 select o;
+            foreach (var i in query)
+            {
+                 <div class="row">
+                     <div class="col-md-4">@i.OrderDate.ToLocalTime().ToString("M/d/yyyy hh:mm:ss tt")</div>
+                     <div class="col-md-1">@string.Format("{0:c}", i.TotalPrice)</div>
+                     <div class="col-md-2">@i.OrderStatu.Name</div>
+                 </div>
+            }
+        }
+        
+    </div>
+    <div class="tab-pane" id="benefit">
+        <h1>Orange</h1>
+        <p>orange orange orange orange orange</p>
+    </div>    
+</div>
+
 

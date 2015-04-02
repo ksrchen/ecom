@@ -14,7 +14,7 @@ namespace ecom.web.Controllers
             using (var db = new Ecom.Model.ecomEntities())
             {
                 var query = from item in db.ShoppingCarts.Include("Product") select item;
-                ViewBag.Subtotal = query.Sum(p => p.Product.Price);
+                ViewBag.Subtotal = query.Count() > 0 ? query.Sum(p => p.Product.Price) : 0;
                 return View("index", query.ToList());
             }
         }
