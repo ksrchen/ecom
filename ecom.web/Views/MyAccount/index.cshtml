@@ -9,7 +9,7 @@
 </ul>
 <div class="tab-content">
     <div class="tab-pane active" id="order">
-        <div class="row">
+        <div class="row bg-primary">
             <div class="col-md-1">Order ID</div>
             <div class="col-md-3">Order Date</div>
             <div class="col-md-1">Price</div>
@@ -31,15 +31,15 @@
         
     </div>
     <div class="tab-pane" id="benefit">
-    <div class="row">
-     <div class="col-md-1">Benefit ID</div>
-    <div class="col-md-2">Benefit</div>
-    <div class="col-md-2">Source</div>
-    <div class="col-md-1">Order ID</div>
-    <div class="col-md-1">Line ID</div>
-    <div class="col-md-3">Comment</div>
-    <div class="col-md-1">Status</div>
-    </div>
+        <div class="row bg-primary">
+            <div class="col-md-1">Benefit ID</div>
+            <div class="col-md-2">Benefit</div>
+            <div class="col-md-2">Source</div>
+            <div class="col-md-1">Order ID</div>
+            <div class="col-md-1">Line ID</div>
+            <div class="col-md-3">Comment</div>
+            <div class="col-md-1">Status</div>
+        </div>
     @using (var db = new Ecom.Model.ecomEntities())
     {
             var query = from o in db.UserBenefits where o.UserID == 1 select o;
