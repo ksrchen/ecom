@@ -31,9 +31,31 @@
         
     </div>
     <div class="tab-pane" id="benefit">
-        <h1>Orange</h1>
-        <p>orange orange orange orange orange</p>
-    </div>    
+    <div class="row">
+     <div class="col-md-1">Benefit ID</div>
+    <div class="col-md-2">Benefit</div>
+    <div class="col-md-2">Source</div>
+    <div class="col-md-1">Order ID</div>
+    <div class="col-md-1">Line ID</div>
+    <div class="col-md-3">Comment</div>
+    <div class="col-md-1">Status</div>
+    </div>
+    @using (var db = new Ecom.Model.ecomEntities())
+    {
+            var query = from o in db.UserBenefits where o.UserID == 1 select o;
+            foreach (var i in query)
+            {
+                <div class="row">
+                    <div class="col-md-1">@i.BenefitID</div>
+                    <div class="col-md-2">@i.Benefit.Name</div>
+                    <div class="col-md-2">@i.Source</div>
+                    <div class="col-md-1">@i.FromOrderID</div>
+                    <div class="col-md-1">@i.FromOrderLineID</div>
+                    <div class="col-md-3">@i.Comments</div>
+                    <div class="col-md-1">@i.Active</div>
+                </div>
+            }       
+     }
 </div>
 
 
