@@ -13,7 +13,7 @@ namespace Ecom.Payment
     public class PaymentGateway
     {
 
-        public static string Charge(Ecom.Model.Order order)
+        public static PS.models.TransactionResponse Charge(Ecom.Model.Order order)
         {
             using (var client = GetClient(0))
             {
@@ -38,11 +38,7 @@ namespace Ecom.Payment
                 };
 
                 var resp = result.Content.ReadAsAsync<PS.models.TransactionResponse>(formatters).Result;
-                if (!resp.Status)
-                {
-                    throw new Exception("Authorization failed: Reason Code:" + resp.ReasonCode + " Message:" + resp.Message);
-                }
-                return resp.TransactionId;
+                return resp;
             };
 
         }

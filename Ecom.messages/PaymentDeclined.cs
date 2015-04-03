@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Ecom.messages
 {
-    public class ChargePayment : ICommand
+    public class PaymentDeclined : IMessage
     {
         public int OrderID { get; set; }
+        public string ReasonCode { get; set; }
     }
 }

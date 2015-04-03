@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="ChargePayment.cs" />
     <Compile Include="CreateOrder.cs" />
+    <Compile Include="PaymentDeclined.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecievedPayment.cs" />
   </ItemGroup>

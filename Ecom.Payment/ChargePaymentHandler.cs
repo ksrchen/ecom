@@ -22,17 +22,21 @@ namespace Ecom.Payment
 
             using (var db = new Ecom.Model.ecomEntities())
             {
-                var order = db.Orders.FirstOrDefault(p => p.OrderID == message.Order.OrderID);
+                var order = db.Orders.FirstOrDefault(p => p.OrderID == message.OrderID);
 
-                var transactionId = PaymentGateway.Charge(order);
-                Console.WriteLine("Charged order {0}, trx id {1}", message.Order.OrderID, transactionId);
 
-                _bus.Reply(new RecievedPayment { OrderID = message.Order.OrderID, TransactionID = transactionId });
+                var response = PaymentGateway.Charge(order);
+                if (response.Status)
+                {
+                    Console.WriteLine("Charged order {0}, trx id {1}", message.OrderID, response.TransactionId);
+                    _bus.Reply(new RecievedPayment { OrderID = message.OrderID, TransactionID = response.TransactionId });
+                }
+                else
+                {
+                    Console.WriteLine("payment declined {0}, reason code {1}", message.OrderID, response.ReasonCode);
+                    _bus.Reply(new PaymentDeclined { OrderID = message.OrderID, ReasonCode = response.ReasonCode });
+                }
             }
         }
-
-
     }
-
-    
 }
