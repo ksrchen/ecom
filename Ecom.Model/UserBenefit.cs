@@ -18,6 +18,10 @@ namespace Ecom.Model
         public int UserID { get; set; }
         public int BenefitID { get; set; }
         public Nullable<int> FromOrderLineID { get; set; }
+        public string Source { get; set; }
+        public Nullable<int> FromOrderID { get; set; }
+        public string Comments { get; set; }
+        public bool Active { get; set; }
     
         public virtual Benefit Benefit { get; set; }
         public virtual User User { get; set; }

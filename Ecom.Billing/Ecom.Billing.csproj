@@ -54,13 +54,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="EndpointConfig.cs" />
+    <Compile Include="InvoiceHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ecom.messages\Ecom.messages.csproj">
+      <Project>{4cccb46c-32f8-4c69-8a30-315ca4827b84}</Project>
+      <Name>Ecom.messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ecom.Model\Ecom.Model.csproj">
+      <Project>{7b80c7d3-8d91-4142-aa67-9e8296d218ad}</Project>
+      <Name>Ecom.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

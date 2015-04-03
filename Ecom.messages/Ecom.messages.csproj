@@ -45,10 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChargePayment.cs" />
+    <Compile Include="CreateInvoice.cs" />
     <Compile Include="CreateOrder.cs" />
+    <Compile Include="FulfillmentComplete.cs" />
     <Compile Include="PaymentDeclined.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecievedPayment.cs" />
+    <Compile Include="RequestFulfillment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

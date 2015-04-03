@@ -20,9 +20,9 @@ namespace Ecom.server
     public class OrderHandler : 
         Saga<OrderSagaData>,
         IAmStartedByMessages<CreateOrder>,
-       // IHandleMessages<CreateOrder>,
         IHandleMessages<RecievedPayment>,
-        IHandleMessages<PaymentDeclined>
+        IHandleMessages<PaymentDeclined>,
+        IHandleMessages<FulfillmentComplete>
     {
         IBus _bus;
 
@@ -61,6 +61,7 @@ namespace Ecom.server
                     db.SaveChanges();
                 }
             }
+            _bus.Send("Ecom.Fulfillment", new RequestFulfillment { OrderID = message.OrderID });
         }
 
         public void Handle(PaymentDeclined message)
@@ -79,6 +80,25 @@ namespace Ecom.server
 
         }
 
+        public void Handle(FulfillmentComplete message)
+        {
+
+            Console.WriteLine("Got FulfillmentComplete order {0}", message.OrderID);
+
+            _bus.Send("Ecom.Billing", new CreateInvoice { OrderID = message.OrderID });
+
+            using (var db = new Ecom.Model.ecomEntities())
+            {
+                var order = db.Orders.FirstOrDefault(p => p.OrderID == message.OrderID);
+                if (order != null)
+                {
+                    order.OrderStatusID = 6;
+                    db.SaveChanges();
+                }
+            }
+            MarkAsComplete();
+        }
+
 
         protected override void ConfigureHowToFindSaga(SagaPropertyMapper<OrderSagaData> mapper)
         {
@@ -87,5 +107,7 @@ namespace Ecom.server
             mapper.ConfigureMapping<PaymentDeclined>(s => s.OrderID).ToSaga(m => m.OrderID);
 
         }
+
+       
     }
 }
