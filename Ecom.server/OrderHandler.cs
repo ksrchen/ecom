@@ -20,7 +20,7 @@ namespace Ecom.server
     public class OrderHandler : 
         Saga<OrderSagaData>,
         IAmStartedByMessages<CreateOrder>,
-        IHandleMessages<CreateOrder>,
+       // IHandleMessages<CreateOrder>,
         IHandleMessages<RecievedPayment>,
         IHandleMessages<PaymentDeclined>
     {
@@ -41,6 +41,8 @@ namespace Ecom.server
                 db.Entry(message.Order).State = System.Data.Entity.EntityState.Detached;
 
                 Console.WriteLine("Order {0} created", message.Order.OrderID);
+
+                Data.OrderID = message.Order.OrderID;
 
                 _bus.Send("Ecom.Payment", new ChargePayment { OrderID = message.Order.OrderID });
             }
