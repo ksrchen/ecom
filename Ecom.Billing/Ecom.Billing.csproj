@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bootstrapper.cs" />
     <Compile Include="EndpointConfig.cs" />
     <Compile Include="InvoiceHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

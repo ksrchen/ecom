@@ -62,6 +62,8 @@ namespace Ecom.server
                 }
             }
             _bus.Send("Ecom.Fulfillment", new RequestFulfillment { OrderID = message.OrderID });
+            _bus.Send("Ecom.Billing", new CreateInvoice { OrderID = message.OrderID });
+
         }
 
         public void Handle(PaymentDeclined message)
@@ -85,8 +87,7 @@ namespace Ecom.server
 
             Console.WriteLine("Got FulfillmentComplete order {0}", message.OrderID);
 
-            _bus.Send("Ecom.Billing", new CreateInvoice { OrderID = message.OrderID });
-
+           
             using (var db = new Ecom.Model.ecomEntities())
             {
                 var order = db.Orders.FirstOrDefault(p => p.OrderID == message.OrderID);

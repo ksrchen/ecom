@@ -51,6 +51,7 @@
     <Compile Include="PaymentDeclined.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecievedPayment.cs" />
+    <Compile Include="RecurringPaymentDeclineEvent.cs" />
     <Compile Include="RequestFulfillment.cs" />
   </ItemGroup>
   <ItemGroup>
